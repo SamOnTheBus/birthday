@@ -5,20 +5,66 @@
   <title>Happy Birthday, Beautiful ❤️</title>
   <style>
     body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: #1a1a2e;
-    color: #fff;
-    text-align: center;
-    overflow-x: hidden;
-    position: relative;
-    background-image:
-        radial-gradient(#ff8aab 1px, transparent 1px),
-        radial-gradient(#ffb3c6 1px, transparent 1px);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
-    }
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #ffe6e6, #ffd6eb, #ffe4f0);
+  color: #4b2e2e;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Starfield background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+/* Animated floating background hearts */
+body::after {
+  content: '💖 💗 💕 💓 💞';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 20%;
+  left: 0;
+  font-size: 50px;
+  color: rgba(255, 182, 193, 0.3);
+  animation: floatHearts 20s linear infinite;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Twinkling stars animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+}
+
+/* Floating hearts animation */
+@keyframes floatHearts {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
 
 
     .floating-heart {
@@ -45,18 +91,22 @@
 
     @media (max-width: 600px) {
     h1 {
-        font-size: 2.4em;
+    margin-top: 70px;
+    font-size: 3em;
+    color: #c2185b; /* romantic rose red */
     }
 
     h2 {
-        font-size: 1.3em;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #ad1457; /* deep soft pink */
     }
 
     .message, .fun-message {
-        font-size: 1.3em;
-        padding: 25px;
-        line-height: 1.8;
+    background-color: rgba(255, 255, 255, 0.85); /* soft white box */
+    color: #4b2e2e;
     }
+
 
     button {
         font-size: 1.3em;
@@ -76,16 +126,19 @@
 
 
     h1 {
-      margin-top: 70px;
-      font-size: 3em;
-      color: #fff;
+    margin-top: 70px;
+    font-size: 3em;
+    color: #c2185b; /* deep rose pink */
+    text-shadow: 1px 1px 2px #fff3f7;
     }
 
     h2 {
-      font-size: 1.3em;
-      font-weight: 300;
-      color: #fce4ec;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #ad1457; /* soft berry tone */
+    text-shadow: 1px 1px 2px #ffe6f0;
     }
+
 
     .message, .fun-message {
       background-color: rgba(255, 255, 255, 0.1);
@@ -110,8 +163,8 @@
       margin: 10px;
       padding: 15px 25px;
       font-size: 1em;
-      background-color: #fff;
-      color: #e91e63;
+      background-color: #f8bbd0; /* baby pink */
+      color: #880e4f;
       border: none;
       border-radius: 25px;
       cursor: pointer;
@@ -119,8 +172,8 @@
     }
 
     button:hover {
-      background-color: #e91e63;
-      color: #fff;
+        background-color: #c2185b;
+        color: #fff;
     }
 
     .fall {
